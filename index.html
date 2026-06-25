@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Колледж Информационных Технологий · музей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="vintage-overlay"></div>
+    <div class="scan-line"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge">объект культурного наследия</div>
+            <h1>Колледж Информационных Технологий</h1>
+            <p class="address">ул. Софьи Перовской, 16</p>
+            <div class="hero-info">
+                <span>построен в XIX веке</span>
+                <span>региональное значение</span>
+                <span>музей с 1970-х</span>
+            </div>
+            <a href="#history" class="btn-vintage">читать историю</a>
+        </div>
+    </header>
+
+    <nav class="nav-vintage">
+        <ul>
+            <li><a href="#history">история</a></li>
+            <li><a href="#owners">владельцы</a></li>
+            <li><a href="#gallery">галерея</a></li>
+            <li><a href="#museum">музей связи</a></li>
+            <li><a href="#today">сегодня</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="history" class="section">
+            <h2 class="section-title">история усадьбы</h2>
+            <div class="history-block">
+                <p><strong>Объект культурного наследия регионального значения</strong> — двухэтажная усадьба на улице Софьи Перовской, 16 (до 1918 года — Старо-Преображенская).</p>
+                <p>Заказчиками и строителями были <strong>купцы Молдовановы</strong>. Владельцем стал герой Первой мировой <strong>Иван Молдованов</strong>.</p>
+                <p>В составе 275-го пехотного Лебединского полка он участвовал в осаде крепости Перемышль — самом крупном успехе Русской императорской армии в той войне. Иван был ранен, но остался в строю. Награждён орденами Святого Владимира IV степени, Святой Анны IV и III степени.</p>
+                <p>Хозяева жили на втором этаже, первый этаж сдавался в аренду.</p>
+            </div>
+        </section>
+
+        <section id="owners" class="section">
+            <h2 class="section-title">владельцы и жильцы</h2>
+            <div class="owners-grid">
+                <div class="owner-card">
+                    <h3>Иван Молдованов</h3>
+                    <p>Герой Первой мировой, владелец усадьбы. Награждён боевыми орденами за оборону Перемышля.</p>
+                </div>
+                <div class="owner-card">
+                    <h3>Пётр Залесский</h3>
+                    <p>Военный инженер, полковник, начальник курской инженерной дистанции. Квартировал здесь в 1909–1910 годах.</p>
+                    <p style="font-size:0.9rem; margin-top:8px; color:#b8a68b;">Инженерная дистанция заведовала воинскими зданиями, ремонтом, освещением, отоплением и водоснабжением.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section">
+            <h2 class="section-title">галерея</h2>
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+                <div class="slide"><img src="C:\Users\Глеб\Desktop\сайт музей\image\1.jpg" alt="1"></div>
+                <div class="slide"><img src="C:\Users\Глеб\Desktop\сайт музей\image\2.jpg" alt="2"></div>
+                <div class="slide"><img src="C:\Users\Глеб\Desktop\сайт музей\image\3.jpg" alt="3"></div>
+                <div class="slide"><img src="C:\Users\Глеб\Desktop\сайт музей\image\4.jpg" alt="4"></div>
+                <div class="slide"><img src="C:\Users\Глеб\Desktop\сайт музей\image\5.jpg" alt="5"></div>
+                <div class="slide"><img src="C:\Users\Глеб\Desktop\сайт музей\image\6.jpg" alt="6"></div>
+                <div class="slide"><img src="C:\Users\Глеб\Desktop\сайт музей\image\7.jpg" alt="7"></div>
+                </div>
+                <button class="slider-btn prev" id="prevBtn">‹</button>
+                <button class="slider-btn next" id="nextBtn">›</button>
+            </div>
+            <div class="slider-dots" id="sliderDots"></div>
+        </section>
+
+        <section id="museum" class="section">
+            <h2 class="section-title">музей связи</h2>
+            <div class="museum-block">
+                <p><strong>С 1970-х годов</strong> на территории Курского техникума связи действует музей связи.</p>
+                <p>В 1928 году в здании жили работники кожевенного завода. В 1938 были надстроены ещё два этажа.</p>
+                <p>С 1945 года здесь размещалось специальное женское ремесленное училище связи.</p>
+                <p><span class="highlight">Здание усадьбы не пострадало во время войны.</span></p>
+                <div class="museum-icons">
+                </div>
+            </div>
+        </section>
+
+        <section id="today" class="section">
+            <h2 class="section-title">сегодня</h2>
+            <div class="today-block">
+                <p>Сейчас в здании бывшей усадьбы Молдовановых располагается <strong>Колледж Информационных Технологий</strong>.</p>
+                <p>Музей связи, открытый ещё в 1970-х, бережно хранит историю развития телекоммуникаций и память о людях, создававших эту историю.</p>
+                <p class="signature">Объект культурного наследия регионального значения</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Колледж Информационных Технологий · ул. Софьи Перовской, 16</p>
+        <p style="margin-top:6px; font-size:0.8rem; color:#6a5c4a;">музей связи с 1970-х</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
