@@ -16,7 +16,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== ВИНТАЖНЫЕ ЭФФЕКТЫ ===== */
 .vintage-overlay {
     position: fixed;
     top: 0;
