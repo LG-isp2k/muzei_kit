@@ -745,3 +745,42 @@ footer {
         letter-spacing: 6px;
     }
 }
+
+.pc-title {
+    display: block;
+}
+
+.phone-title {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .pc-title {
+        display: none !important;
+    }
+    
+    .phone-title {
+        display: block !important;
+        font-size: 2.2rem !important;
+        letter-spacing: 2px !important;
+        word-break: keep-all !important;
+        white-space: nowrap !important;
+    }
+    
+    .phone-title::after {
+        content: '|';
+        animation: cursorBlink 0.8s step-end infinite;
+        margin-left: 4px;
+    }
+}
+
+@media (max-width: 400px) {
+    .phone-title {
+        font-size: 1.6rem !important;
+        letter-spacing: 1px !important;
+    }
+    
+    .phone-title::after {
+        content: '';
+    }
+}
