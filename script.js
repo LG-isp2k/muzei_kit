@@ -1,68 +1,68 @@
 (function() {
-    const navLinks = document.querySelectorAll('.nav-vintage a');
-    navLinks.forEach(link => {
+    var navLinks = document.querySelectorAll('.nav-vintage a');
+    navLinks.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const target = document.getElementById(targetId);
+            var targetId = this.getAttribute('href').substring(1);
+            var target = document.getElementById(targetId);
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
-    const btn = document.querySelector('.btn-vintage');
+    var btn = document.querySelector('.btn-vintage');
     if (btn) {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.getElementById('history');
+            var target = document.getElementById('history');
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     }
 
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    var sections = document.querySelectorAll('.section');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             }
         });
     }, { threshold: 0.15 });
 
-    sections.forEach(section => {
+    sections.forEach(function(section) {
         observer.observe(section);
     });
 
-    const track = document.getElementById('sliderTrack');
+    var track = document.getElementById('sliderTrack');
     
     if (track) {
-        const slides = track.querySelectorAll('.slide');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const dotsContainer = document.getElementById('sliderDots');
+        var slides = track.querySelectorAll('.slide');
+        var prevBtn = document.getElementById('prevBtn');
+        var nextBtn = document.getElementById('nextBtn');
+        var dotsContainer = document.getElementById('sliderDots');
 
-        let currentIndex = 0;
-        const totalSlides = slides.length;
+        var currentIndex = 0;
+        var totalSlides = slides.length;
 
         if (totalSlides > 0 && dotsContainer) {
-            slides.forEach((_, i) => {
-                const dot = document.createElement('span');
+            slides.forEach(function(_, i) {
+                var dot = document.createElement('span');
                 dot.classList.add('dot');
                 if (i === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(i));
+                dot.addEventListener('click', function() { goToSlide(i); });
                 dotsContainer.appendChild(dot);
             });
 
-            const dots = dotsContainer.querySelectorAll('.dot');
+            var dots = dotsContainer.querySelectorAll('.dot');
 
             function goToSlide(index) {
                 if (index < 0) index = totalSlides - 1;
                 if (index >= totalSlides) index = 0;
                 currentIndex = index;
-                track.style.transform = 'translateX(-' + currentIndex * 100 + '%)';
-                dots.forEach((dot, i) => {
+                track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+                dots.forEach(function(dot, i) {
                     dot.classList.toggle('active', i === currentIndex);
                 });
             }
@@ -72,13 +72,15 @@
                 nextBtn.addEventListener('click', function() { goToSlide(currentIndex + 1); });
             }
 
+            // клавиши ← →
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
                 if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
             });
 
-            let autoplay = setInterval(function() { goToSlide(currentIndex + 1); }, 5000);
-            const sliderContainer = document.querySelector('.slider-container');
+            // авто-слайдер
+            var autoplay = setInterval(function() { goToSlide(currentIndex + 1); }, 5000);
+            var sliderContainer = document.querySelector('.slider-container');
             if (sliderContainer) {
                 sliderContainer.addEventListener('mouseenter', function() { clearInterval(autoplay); });
                 sliderContainer.addEventListener('mouseleave', function() {
@@ -89,7 +91,7 @@
             console.log('📸 Слайдер содержит ' + totalSlides + ' фото');
         }
     } else {
-        console.log('⚠️ Слайдер не найден на странице');
+        console.log('⚠️ Слайдер #sliderTrack не найден на странице');
     }
 
     function createParticles() {
